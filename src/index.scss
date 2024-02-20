@@ -1,0 +1,51 @@
+@import "./styles/styleguide.scss";
+@import "./styles/breakpoints.scss";
+
+* {
+  font-family: $font-family;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  padding: 0;
+  background-color: $background-color;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 3.25rem;
+
+  @include respond-to("mobile") {
+    font-size: 2.5rem;
+  }
+
+
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  font-family: "Roboto";
+
+}
+
+
+
+
+h4 {
+  font-size: 1.125rem;
+
+  @include respond-to("mobile") {
+    font-size: 1rem;
+  }
+
+  font-weight: normal;
+  margin: 0;
+  color: white;
+  font-family: "Roboto";
+}

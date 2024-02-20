@@ -1,0 +1,36 @@
+@import "../../../styles/styleguide.scss";
+
+.redRoundedButton {
+    background-color: $primary-color;
+    color: white;
+    border-radius: 25px;
+    padding: 15px 50px;
+    font-size: 16px;
+    font-family: "Roboto";
+    cursor: pointer;
+    transition: all 0.8s ease;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: lighten($primary-color, 8%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.arrow {
+    margin-left: 10px;
+    font-size: 20px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    .redRoundedButton:hover & {
+        transform: rotate(90deg) scale(1.5);
+    }
+}
