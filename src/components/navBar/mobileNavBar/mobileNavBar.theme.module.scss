@@ -1,0 +1,100 @@
+@import "../../../styles/styleguide.scss";
+@import "../../../styles/breakpoints.scss";
+
+.mainContainer {
+    transition: all 0.8s ease;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    display: none;
+    background-color: black;
+    border-radius: 50px;
+    border: none;
+    width: 70px;
+    height: 70px;
+
+    @include respond-to("tablet") {
+        display: flex;
+    }
+}
+
+.mainContainerOpened {
+    width: 200px;
+    height: 350px;
+    border-radius: 20px;
+    opacity: 0.9;
+    padding-left: 20px;
+    padding-top: 20px;
+
+}
+
+.menuIcon {
+    color: white;
+    transition: all 0.3s ease;
+    opacity: 1;
+    font-size: 33px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.menuIconOpened {
+    transition: all 0.3s ease;
+    opacity: 0;
+    font-size: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+.mobileNavBarButton {
+    transition: all 0.8s ease;
+    padding: 0;
+    font-size: 0px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    opacity: 0;
+    background-size: 0% 2px;
+    font-family: "Roboto";
+    font-weight: 400;
+    background-image: linear-gradient(120deg, $primary-color 50%, $secondary-color 100%);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.3s;
+
+}
+
+.mobileNavBarButtonOpened {
+    transition: all 0.8s ease;
+    font-size: 16px;
+    margin: 15px 0;
+    opacity: 1;
+    padding-bottom: 5px;
+    background-size: 35px 2px;
+}
+
+.background {
+    background-color: black;
+    transition: all 0.8s ease;
+    animation: animateOpacity 0.8s forwards;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes animateOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}

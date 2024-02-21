@@ -1,18 +1,17 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import theme from './TemplateName.theme.module.scss';
+import theme from './templateName.theme.module.scss';
 
-function TemplateName() {
+function TemplateName({ children }) {
   return (
-    <div>
-      <h1>TemplateName component</h1>
+    <div className={theme.mainContainer}>
+      {children}
     </div>
   );
 }
 
 TemplateName.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default TemplateName;
