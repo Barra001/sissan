@@ -1,0 +1,15 @@
+@import "../../styles/styleguide.scss";
+
+.mainContainer {
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+}
+
+.red {
+    background: linear-gradient(45deg, $primary-color 0%, $secondary-color 125%);
+}
+
+.yellow {
+    background: linear-gradient(45deg, #F7936F 0%, #FFEF5E 125%);
+}

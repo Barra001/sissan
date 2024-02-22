@@ -2,6 +2,7 @@ import React from 'react';
 import theme from './frontPage.theme.module.scss';
 import ContactButton from './contactButton/contactButton';
 import video from './video.mp4';
+import Ball from '../ball/ball';
 
 function FrontPage() {
   return (
@@ -9,7 +10,6 @@ function FrontPage() {
       <svg width="0" height="0">
         <defs>
           <clipPath id="smoothCurve" clipPathUnits="objectBoundingBox">
-
             <path d="M 0,0 L 1,0 L 1,0.85 Q 0.5,1 0,0.85 Z" />
           </clipPath>
         </defs>
@@ -17,6 +17,7 @@ function FrontPage() {
       <video muted autoPlay loop className={theme.videoBackground}>
         <source src={video} type="video/mp4" />
       </video>
+      <Ball right={80} bottom={-10} />
       <section className={theme.column}>
         <h1 className={theme.title}>Soluciones en gestión de sangre</h1>
         <h4 className={theme.subTitle}>

@@ -20,7 +20,6 @@
   z-index: -1;
   object-fit: cover;
   filter: brightness(0.6) blur(3px);
-  // using clip-path crate a rounded belly only on te bottom
   clip-path: url(#smoothCurve);
 }
 

@@ -1,30 +1,44 @@
 @import "../../styles/styleguide.scss";
+@import "../../styles/breakpoints.scss";
 
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     padding: 20px;
-    margin-top: 20px;
-    height: 350px;
+    margin-top: 10px;
+    margin-bottom: 150px;
+
+
+    @include respond-to("tablet") {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
     padding: 20px;
     margin-top: 20px;
     flex: 1;
-    height: 350px;
+
 }
 
-.expand {
-    flex: 1;
+.image {
+    height: 470px;
+    object-fit: scale-down;
+
+    @include respond-to("tablet") {
+        margin-top: 20px;
+        width: 35%;
+        min-width: 250px;
+    }
+}
+
+.flexCenter {
     display: flex;
-    flex-direction: column;
-    justify-content: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex: 1;
 }

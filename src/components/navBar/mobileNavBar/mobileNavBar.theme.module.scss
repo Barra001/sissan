@@ -4,17 +4,18 @@
 .mainContainer {
     transition: all 0.8s ease;
     position: fixed;
-    top: 25px;
-    left: 25px;
+    top: 20px;
+    left: 20px;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
     display: none;
     background-color: black;
     border-radius: 50px;
     border: none;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
 
     @include respond-to("tablet") {
         display: flex;
@@ -35,7 +36,7 @@
     color: white;
     transition: all 0.3s ease;
     opacity: 1;
-    font-size: 33px;
+    font-size: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,14 +60,13 @@
     border: none;
     margin: 0;
     opacity: 0;
-    background-size: 0% 2px;
+    background-size: 0% 3px;
     font-family: "Roboto";
     font-weight: 400;
-    background-image: linear-gradient(120deg, $primary-color 50%, $secondary-color 100%);
+    background-image: linear-gradient(120deg, $primary-color 0%, $secondary-color 100%);
     background-repeat: no-repeat;
     background-position: 0 100%;
-    transition: background-size 0.3s;
-
+    transition: opacity 0.8s ease;
 }
 
 .mobileNavBarButtonOpened {
@@ -75,7 +75,7 @@
     margin: 15px 0;
     opacity: 1;
     padding-bottom: 5px;
-    background-size: 35px 2px;
+    background-size: 45px 1.5px;
 }
 
 .background {
@@ -87,6 +87,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 999;
 }
 
 @keyframes animateOpacity {
