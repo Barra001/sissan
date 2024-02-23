@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import theme from './ball.theme.module.scss';
 
 function Ball({
-  size, left, top, right, bottom, yellow,
+  size, left, top, right, bottom, yellow, zindex, relative,
 }) {
   return (
     <div
       className={`${theme.mainContainer} ${yellow ? theme.yellow : theme.red}`}
-      style={{
-        width: size, height: size, top, left, right, bottom,
+      style={relative ? {
+        width: size, height: size, left, top, right, bottom, zIndex: zindex, position: 'relative',
+      } : {
+        width: size, height: size, left, top, right, bottom, zIndex: zindex, position: 'absolute',
       }}
     />
   );
@@ -22,6 +24,8 @@ Ball.propTypes = {
   yellow: PropTypes.bool,
   right: PropTypes.number,
   bottom: PropTypes.number,
+  zindex: PropTypes.number,
+  relative: PropTypes.bool,
 };
 
 Ball.defaultProps = {
@@ -31,6 +35,8 @@ Ball.defaultProps = {
   yellow: false,
   right: undefined,
   bottom: undefined,
+  zindex: -2,
+  relative: false,
 };
 
 export default Ball;

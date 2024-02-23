@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import theme from './aboutUs.theme.module.scss';
 import SecctionTitle from '../secctionTitle/secctionTitle';
@@ -6,6 +6,8 @@ import image from './sissanlatam.png';
 import SideMargins from '../sideMargins/sideMargins';
 
 function AboutUs() {
+  const [isOpen, setIsOpened] = useState(false);
+
   return (
     <SideMargins>
       <div className={theme.row}>
@@ -24,6 +26,46 @@ function AboutUs() {
               We are a custom software development company that guarantees the successful
               delivery of your project.
             </p>
+            <p className={`${theme.transition} ${isOpen ? '' : theme.hiddenText}`}>
+              Finding the right talent is not easy. We help you find the talent
+              that suits your needs, follows your processes, and sticks with
+              you long term (not the case with freelancers)
+              Finding the right talent is not easy. We help you find the talent
+              that suits your needs, follows your processes, and sticks with
+              you long term (not the case with freelancers)
+              Finding the right talent is not easy. We help you find the talent
+              that suits your needs, follows your processes, and sticks with
+              you long term (not the case with freelancers)
+              Finding the right talent is not easy. We help you find the talent
+              that suits your needs, follows your processes, and sticks with
+              you long term (not the case with freelancers)
+              Finding the right talent is not easy. We help you find the talent
+              that suits your needs, follows your processes, and sticks with
+              you long term (not the case with freelancers)
+            </p>
+            <button
+              className={theme.moreInfoButton}
+              type="submit"
+              onClick={() => {
+                if (isOpen) {
+                  setIsOpened(false);
+                } else {
+                  setIsOpened(true);
+                }
+              }}
+            >
+              Ver
+              {' '}
+              {isOpen ? 'menos' : 'más'}
+              {' '}
+              información
+
+              <span
+                className={`material-symbols-outlined ${theme.arrow}`}
+              >
+                arrow_forward
+              </span>
+            </button>
           </div>
         </AnimationOnScroll>
         <AnimationOnScroll

@@ -4,6 +4,7 @@
 * {
   font-family: $font-family;
   font-weight: normal;
+  font-size: 1rem;
 }
 
 body {
@@ -53,7 +54,7 @@ h4 {
 p {
   font-family: $font-family;
   font-weight: normal;
-  font-size: 1.125rem;
+
   color: $tertiary-color;
   line-height: 30px;
 }

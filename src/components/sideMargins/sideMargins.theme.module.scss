@@ -2,13 +2,20 @@
 @import "../../styles/breakpoints.scss";
 
 .mainContainer {
-    margin: 0 40px;
+    padding: 0 40px;
 
     @include respond-to("tablet") {
-        margin: 0 10px;
+        padding: 0 10px;
     }
 
     @include respond-to("mobile") {
-        margin: 0 0px;
+        padding: 0 0px;
     }
+}
+
+.secondaryBackground {
+    background-color: $secondary-background-color;
+    padding: 50px 0;
+    border-top: 1.5px solid #E7DAED;
+    border-bottom: 1.5px solid #E7DAED;
 }
