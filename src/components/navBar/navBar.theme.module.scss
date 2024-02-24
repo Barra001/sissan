@@ -4,12 +4,12 @@
 .navBar {
     border-radius: 50px;
     border: none;
-    padding: 10px 0;
+    padding: 10px 5px;
     margin: 0 50px;
     background-color: black;
     color: white;
     position: fixed;
-    top: 20px;
+    //top: 20px;
     height: 50px;
     left: 0;
     right: 0;
@@ -17,19 +17,19 @@
     display: flex;
     flex-direction: row;
     transition: all 0.8s ease;
-    transform: scale(.96);
+    //  transform: scale(.96);
 
 
     @include respond-to("tablet") {
         display: none;
     }
 
-    &:hover {
+    /*&:hover {
         transform: scale(1);
         box-shadow: 1px 16px 29px -4px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 1px 16px 29px -4px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 1px 16px 29px -4px rgba(0, 0, 0, 0.75);
-    }
+    }*/
 
 }
 

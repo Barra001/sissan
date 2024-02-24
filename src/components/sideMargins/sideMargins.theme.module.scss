@@ -15,7 +15,14 @@
 
 .secondaryBackground {
     background-color: $secondary-background-color;
-    padding: 50px 0;
+    padding: 50px 80px;
     border-top: 1.5px solid #E7DAED;
     border-bottom: 1.5px solid #E7DAED;
+
+    background-image: linear-gradient(120deg, $primary-color 0%, $secondary-color 100%);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 10px 200%;
+    background-position-y: 3000;
+    background-blend-mode: multiply;
 }

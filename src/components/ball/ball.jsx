@@ -6,14 +6,16 @@ function Ball({
   size, left, top, right, bottom, yellow, zindex, relative,
 }) {
   return (
-    <div
-      className={`${theme.mainContainer} ${yellow ? theme.yellow : theme.red}`}
-      style={relative ? {
-        width: size, height: size, left, top, right, bottom, zIndex: zindex, position: 'relative',
-      } : {
-        width: size, height: size, left, top, right, bottom, zIndex: zindex, position: 'absolute',
-      }}
-    />
+    <div className={relative ? theme.positionContainer : null}>
+      <div
+        className={`${theme.mainContainer} ${yellow ? theme.yellow : theme.red}`}
+        style={relative ? {
+          width: size, height: size, transform: `translate(${left}px, ${top}px)`, zIndex: zindex, position: 'relative',
+        } : {
+          width: size, height: size, left, top, right, bottom, zIndex: zindex, position: 'absolute',
+        }}
+      />
+    </div>
   );
 }
 

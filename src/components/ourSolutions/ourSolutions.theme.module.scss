@@ -7,3 +7,16 @@
     justify-content: center;
     background-color: $secondary-background-color;
 }
+
+.lineContainer {
+    overflow: visible;
+    width: 0px;
+    height: 0px;
+}
+
+.line {
+    width: 1.5px;
+    height: 300px;
+    z-index: 1000;
+    background: #F76680;
+}

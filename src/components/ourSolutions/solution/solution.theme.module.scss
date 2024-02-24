@@ -1,0 +1,93 @@
+@import "../../../styles/styleguide.scss";
+@import "../../../styles/breakpoints.scss";
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 45px 0;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.subTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.image {
+    height: 250px;
+    object-fit: scale-down;
+
+    @include respond-to("tablet") {
+        width: 35%;
+        min-width: 100px;
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+
+}
+
+.imageContainer {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: #2D3748;
+    line-height: 30px;
+    transition: 0.8s all ease;
+    font-size: 1rem;
+}
+
+.hiddenText {
+    font-size: 0;
+    line-height: 0;
+    opacity: 0;
+}
+
+.spacer {
+    flex: 3;
+}
+
+.linearGradientButton {
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background: -webkit-linear-gradient(45deg, #57007B, #F76680);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 0;
+    transition: transform 0.2s ease-in-out;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+}
