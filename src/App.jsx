@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '@fontsource/inter';
 import '@fontsource/inter/100.css';
 import '@fontsource/inter/300.css';
@@ -19,15 +19,31 @@ import FrontPage from './components/frontPage/frontPage';
 import AboutUs from './components/aboutUs/aboutUs';
 import NavBar from './components/navBar/navBar';
 import OurSolutions from './components/ourSolutions/ourSolutions';
+import OurImpact from './components/ourImpact/ourImpact';
 
 function App() {
+  const aboutUsRef = useRef(null);
+  const ourSolutionsRef = useRef(null);
+  const impactRef = useRef(null);
+  const countriesRef = useRef(null);
+  const clientsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <div>
 
-      <NavBar />
+      <NavBar
+        aboutUsRef={aboutUsRef}
+        ourSolutionsRef={ourSolutionsRef}
+        impactRef={impactRef}
+        countriesRef={countriesRef}
+        clientsRef={clientsRef}
+        contactRef={contactRef}
+      />
       <FrontPage />
-      <AboutUs />
-      <OurSolutions />
+      <AboutUs mainRef={aboutUsRef} />
+      <OurSolutions mainRef={ourSolutionsRef} />
+      <OurImpact mainRef={impactRef} />
     </div>
   );
 }

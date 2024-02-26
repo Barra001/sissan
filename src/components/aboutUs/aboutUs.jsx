@@ -1,16 +1,18 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { object } from 'prop-types';
 import theme from './aboutUs.theme.module.scss';
 import SecctionTitle from '../secctionTitle/secctionTitle';
 import image from './sissanlatam.png';
 import SideMargins from '../sideMargins/sideMargins';
 
-function AboutUs() {
+function AboutUs({ mainRef }) {
   const [isOpen, setIsOpened] = useState(false);
 
   return (
     <SideMargins>
-      <div className={theme.row}>
+      <div className={theme.row} id="aboutUsSection" ref={mainRef}>
         <AnimationOnScroll animateIn="animate__slideInLeft" duration={1} style={{ flex: 1 }}>
           <div
             className={theme.column}
@@ -79,5 +81,9 @@ function AboutUs() {
     </SideMargins>
   );
 }
+
+AboutUs.propTypes = {
+  mainRef: object.isRequired,
+};
 
 export default AboutUs;

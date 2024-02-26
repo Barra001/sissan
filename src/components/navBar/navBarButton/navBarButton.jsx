@@ -1,10 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import theme from './navBarButton.theme.module.scss';
 
-function NavBarButton({ children }) {
+function NavBarButton({ children, goTo }) {
   return (
-    <button type="submit" className={theme.navButton}>
+    <button type="submit" className={theme.navButton} onClick={() => { goTo.current?.scrollIntoView({ behavior: 'smooth' }); }}>
       {children}
     </button>
   );
@@ -12,6 +13,7 @@ function NavBarButton({ children }) {
 
 NavBarButton.propTypes = {
   children: PropTypes.string,
+  goTo: PropTypes.object.isRequired,
 };
 
 NavBarButton.defaultProps = {

@@ -4,62 +4,79 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import theme from './solution.theme.module.scss';
 
 function Solution({
-  title, subtitle, text, extendedText, imagePath, inverseAlignment,
+  title, subtitle, text, extendedText, imagePath, inverseAlignment, imageBall, textBall,
 }) {
   const [isOpen, setIsOpened] = useState(false);
+  const isOnTabletOrMobile = window.innerWidth < 1030;
+  const invertAlignment = !isOnTabletOrMobile && inverseAlignment;
   const textContainer = (
-    <AnimationOnScroll
-      animateIn={inverseAlignment ? 'animate__slideInRight' : 'animate__slideInLeft'}
-      duration={1}
-      style={{
-        flex: 8,
-      }}
+    <div style={{
+      flex: 8,
+      position: 'relative',
+    }}
     >
-      <div className={theme.textContainer}>
-        <div className={theme.title}>{title}</div>
-        {subtitle && <div className={theme.subTitle}>{subtitle}</div>}
-        <div className={theme.text}>{text}</div>
-        <div className={`${theme.text} ${isOpen ? '' : theme.hiddenText}`}>{extendedText}</div>
-        {extendedText && (
-        <button
-          onClick={() => {
-            if (isOpen) {
-              setIsOpened(false);
-            } else {
-              setIsOpened(true);
-            }
-          }}
-          className={theme.linearGradientButton}
-          type="button"
-        >
-          Leer
-          {' '}
-          {isOpen ? 'menos' : 'más'}
-          {' '}
-          &gt;
-        </button>
-        )}
-      </div>
-    </AnimationOnScroll>
+      {textBall}
+      <AnimationOnScroll
+        animateIn={invertAlignment ? 'animate__slideInRight' : 'animate__slideInLeft'}
+        duration={1}
+      >
+        <div className={theme.textContainer}>
+          <div className={theme.title}>{title}</div>
+          {subtitle && <div className={theme.subTitle}>{subtitle}</div>}
+          <div className={theme.text}>
+
+            {text}
+          </div>
+          <div className={`${theme.text} ${isOpen ? '' : theme.hiddenText}`}>{extendedText}</div>
+          {extendedText && (
+          <button
+            onClick={() => {
+              if (isOpen) {
+                setIsOpened(false);
+              } else {
+                setIsOpened(true);
+              }
+            }}
+            className={theme.linearGradientButton}
+            type="button"
+          >
+            Leer
+            {' '}
+            {isOpen ? 'menos' : 'más'}
+            {' '}
+            &gt;
+          </button>
+          )}
+        </div>
+      </AnimationOnScroll>
+    </div>
   );
   const imageContainer = (
-    <AnimationOnScroll
-      animateIn={!inverseAlignment ? 'animate__slideInRight' : 'animate__slideInLeft'}
-      duration={1}
-      style={{
-        flex: 8,
-      }}
+    <div style={{
+      flex: 8,
+      position: 'relative',
+    }}
     >
-      <div className={theme.imageContainer}>
-        <img src={imagePath} alt={title} className={theme.image} />
-      </div>
-    </AnimationOnScroll>
+      {imageBall}
+      <AnimationOnScroll
+        animateIn={!isOnTabletOrMobile && !inverseAlignment ? 'animate__slideInRight' : 'animate__slideInLeft'}
+        duration={1}
+      >
+        <div className={theme.imageContainer}>
+          <img src={imagePath} alt={title} className={theme.image} />
+        </div>
+      </AnimationOnScroll>
+    </div>
   );
   return (
     <section className={theme.mainContainer}>
-      {inverseAlignment ? imageContainer : textContainer}
-      <div className={theme.spacer} />
-      {inverseAlignment ? textContainer : imageContainer}
+      {invertAlignment ? imageContainer : textContainer}
+      <div className={theme.spacer}>
+        <div className={theme.arrow} style={!isOnTabletOrMobile && !inverseAlignment ? {} : { justifyContent: 'flex-end' }}>
+          <div className={theme.arrowColor} />
+        </div>
+      </div>
+      {invertAlignment ? textContainer : imageContainer}
     </section>
   );
 }
@@ -71,12 +88,16 @@ Solution.propTypes = {
   extendedText: PropTypes.string,
   imagePath: PropTypes.string.isRequired,
   inverseAlignment: PropTypes.bool,
+  imageBall: PropTypes.node,
+  textBall: PropTypes.node,
 };
 
 Solution.defaultProps = {
   subtitle: null,
   extendedText: null,
   inverseAlignment: false,
+  imageBall: null,
+  textBall: null,
 };
 
 export default Solution;

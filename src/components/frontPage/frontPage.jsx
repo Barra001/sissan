@@ -17,7 +17,7 @@ function FrontPage() {
       <video muted autoPlay loop className={theme.videoBackground}>
         <source src={video} type="video/mp4" />
       </video>
-      <Ball right={80} bottom={-10} />
+      <Ball right="80px" bottom="-10px" />
       <section className={theme.column}>
         <h1 className={theme.title}>Soluciones en gestión de sangre</h1>
         <h4 className={theme.subTitle}>

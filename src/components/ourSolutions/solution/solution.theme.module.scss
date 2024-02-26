@@ -6,7 +6,23 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 45px 0;
+    padding: 45px 0;
+    position: relative;
+
+    background-image: linear-gradient(120deg, #F76680 0%, #F76680 100%);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 1.6px 100%;
+    background-origin: border-box;
+
+    @include respond-to("tablet") {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: visible;
+        padding: 35px 0;
+        background-position: 100% 0;
+    }
 }
 
 .title {
@@ -29,7 +45,7 @@
 
     @include respond-to("tablet") {
         width: 35%;
-        min-width: 100px;
+        min-width: 150px;
     }
 }
 
@@ -39,6 +55,14 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex: 1;
+
+    @include respond-to("tablet") {
+        padding-right: 80px;
+    }
+
+
+
+
 
 }
 
@@ -51,6 +75,15 @@
     flex-direction: row;
     width: 100%;
     margin-bottom: 1.5rem;
+
+    @include respond-to("tablet") {
+        margin-bottom: 0;
+        margin-top: 1.5rem;
+        justify-content: flex-start;
+        margin-right: 80px;
+    }
+
+
 }
 
 .text {
@@ -68,6 +101,42 @@
 
 .spacer {
     flex: 3;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+
+
+    @include respond-to("tablet") {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
+
+
+.arrow {
+    width: 60px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+
+    @include respond-to("tablet") {
+        justify-content: flex-end;
+    }
+
+}
+
+.arrowColor {
+    background-color: #F76680;
+    width: 50%;
+    height: 1.2px;
 }
 
 .linearGradientButton {

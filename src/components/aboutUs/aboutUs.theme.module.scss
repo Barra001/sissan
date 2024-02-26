@@ -6,9 +6,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 70px;
 
 
     @include respond-to("tablet") {
@@ -19,10 +16,8 @@
 }
 
 .column {
-    padding: 20px;
     margin-top: 20px;
     flex: 1;
-
 }
 
 .image {

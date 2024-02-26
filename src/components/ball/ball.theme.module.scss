@@ -12,7 +12,10 @@
 
 .yellow {
     background: linear-gradient(45deg, #F7936F 0%, #FFEF5E 125%);
-    transform: translateX();
+}
+
+.violet {
+    background: linear-gradient(45deg, #57007B 0%, #F76680 125%); // F76680 57007B
 }
 
 .positionContainer {
