@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import { bool, string, object } from 'prop-types';
 import theme from './mobileNavBar.theme.module.scss';
