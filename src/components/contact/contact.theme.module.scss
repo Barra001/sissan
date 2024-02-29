@@ -8,16 +8,34 @@
     justify-content: center;
 }
 
-.row {
+.responsiveRow {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 
     @include respond-to("tablet") {
         flex-direction: column;
         align-items: center;
         justify-content: start;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.socialIcon {
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
     }
 }
 

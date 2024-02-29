@@ -4,9 +4,12 @@ import theme from './contact.theme.module.scss';
 import SideMargins from '../sideMargins/sideMargins';
 import SecctionTitle from '../secctionTitle/secctionTitle';
 import SingleContact from './singleContact/singleContact';
-import peruFlag from './flags/PE.svg';
-import paraguayFlag from './flags/PY.svg';
-import uruguayFlag from './flags/UY.svg';
+import peruFlag from './assets/flags/PE.svg';
+import paraguayFlag from './assets/flags/PY.svg';
+import uruguayFlag from './assets/flags/UY.svg';
+import linkedin from './assets/icons/linkedin.svg';
+import facebook from './assets/icons/facebook.svg';
+import whatsapp from './assets/icons/whatsapp.svg';
 
 function Contact({ mainRef }) {
   return (
@@ -20,10 +23,21 @@ function Contact({ mainRef }) {
             ¿Queres contactarnos?
           </SecctionTitle>
 
-          <div className={theme.row}>
+          <div className={theme.responsiveRow}>
             <SingleContact country="Paraguay" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={paraguayFlag} />
             <SingleContact country="Uruguay" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={uruguayFlag} />
             <SingleContact country="Perú" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={peruFlag} />
+          </div>
+          <div className={theme.row}>
+            <a href="https://www.facebook.com/SoftwareSissan/?locale=es_LA" className={theme.socialIcon}>
+              <img src={facebook} alt="Facebook" />
+            </a>
+            <a href="https://www.linkedin.com/company/data-process-srl/about/" className={theme.socialIcon}>
+              <img src={linkedin} alt="Linkedin" />
+            </a>
+            <a href="https://wa.me/+598091063493" className={theme.socialIcon}>
+              <img src={whatsapp} alt="WhatsApp" />
+            </a>
           </div>
 
         </div>
