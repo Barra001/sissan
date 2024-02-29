@@ -19,7 +19,6 @@ import FrontPage from './components/frontPage/frontPage';
 import AboutUs from './components/aboutUs/aboutUs';
 import NavBar from './components/navBar/navBar';
 import OurSolutions from './components/ourSolutions/ourSolutions';
-import OurImpact from './components/ourImpact/ourImpact';
 import 'react-multi-carousel/lib/styles.css';
 import OurCountries from './components/ourCountries/ourCountries';
 import Contact from './components/contact/contact';
@@ -46,7 +45,7 @@ function App() {
       <FrontPage />
       <AboutUs mainRef={aboutUsRef} />
       <OurSolutions mainRef={ourSolutionsRef} />
-      <OurImpact mainRef={impactRef} />
+
       <OurCountries mainRef={countriesRef} />
       <Contact mainRef={contactRef} />
     </div>
