@@ -11,10 +11,9 @@ function MySlider() {
     <div className={theme.carrouselContainer}>
       <CarouselProvider
         naturalSlideWidth={300}
-        naturalSlideHeight={258}
+        naturalSlideHeight={280}
         totalSlides={6}
-        visibleSlides={3.5}
-
+        visibleSlides={3}
       >
         <Slider className={theme.handCursor}>
           <Slide index={0}>
@@ -24,7 +23,7 @@ function MySlider() {
             <SingleSlide finalNumber={10000} title="Transfusiones" body="A Website is an extension of yourself and we can help you to express it properly. "> </SingleSlide>
           </Slide>
           <Slide index={2}>
-            <SingleSlide finalNumber={20000} title="Donaciones" body="A Website is an extension of yourself and we can help you to express it properly. "> </SingleSlide>
+            <SingleSlide finalNumber={20000} title="Donaciones" body="A Website is an extension of yourself and we can help you to express it properly. " active> </SingleSlide>
           </Slide>
           <Slide index={3}>
             <SingleSlide finalNumber={20000} title="Inmunohematologías" body="A Website is an extension of yourself and we can help you to express it properly. "> </SingleSlide>
