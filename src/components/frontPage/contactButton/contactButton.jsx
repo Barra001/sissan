@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import theme from './contactButton.theme.module.scss';
 
-function ContactButton({ children }) {
+function ContactButton({ children, goTo }) {
   return (
-    <button type="submit" className={theme.redRoundedButton}>
+    <button type="submit" className={theme.redRoundedButton} onClick={() => { goTo.current?.scrollIntoView({ behavior: 'smooth' }); }}>
       {children}
       <span className={`material-symbols-outlined ${theme.arrow}`}>
         arrow_forward
@@ -15,6 +15,7 @@ function ContactButton({ children }) {
 
 ContactButton.propTypes = {
   children: PropTypes.string.isRequired,
+  goTo: PropTypes.object.isRequired,
 };
 
 export default ContactButton;

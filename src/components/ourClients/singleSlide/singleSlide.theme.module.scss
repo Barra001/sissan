@@ -1,0 +1,11 @@
+@import "../../../styles/styleguide.scss";
+
+.mainContainer {
+    height: 150px;
+    width: 300px;
+    object-fit: scale-down;
+    margin: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

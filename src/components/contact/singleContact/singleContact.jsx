@@ -1,39 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import theme from './singleContact.theme.module.scss';
 
 function SingleContact({
   country, phone, email, address, flag,
 }) {
   return (
-    <div className={theme.mainContainer}>
-      <div className={theme.titleRow}>
-        <span>{country}</span>
-        <img src={flag} alt="Paraguay" />
-      </div>
+    <AnimationOnScroll
+      animateIn="animate__slideInUp"
+      duration={1}
+    >
+      <div className={theme.mainContainer}>
+        <div className={theme.titleRow}>
+          <span>{country}</span>
+          <img src={flag} alt="Paraguay" />
+        </div>
 
-      <div className={theme.contactRow}>
-        <span className={`${theme.icon} material-symbols-outlined`}>call</span>
-        <span className={theme.contactText}>{phone}</span>
-      </div>
+        <div className={theme.contactRow}>
+          <span className={`${theme.icon} material-symbols-outlined`}>call</span>
+          <span className={theme.contactText}>{phone}</span>
+        </div>
 
-      <div className={theme.contactRow}>
-        <span className={`${theme.icon} material-symbols-outlined`}>
-          mail
-        </span>
-        <span className={theme.contactText}>{email}</span>
-      </div>
+        <div className={theme.contactRow}>
+          <span className={`${theme.icon} material-symbols-outlined`}>
+            mail
+          </span>
+          <span className={theme.contactText}>{email}</span>
+        </div>
 
-      <div className={theme.contactRow}>
-        <span className={`${theme.icon} material-symbols-outlined`}>
-          location_on
-        </span>
-        <span className={theme.contactText}>
-          {address}
-        </span>
-      </div>
+        <div className={theme.contactRow}>
+          <span className={`${theme.icon} material-symbols-outlined`}>
+            location_on
+          </span>
+          <span className={theme.contactText}>
+            {address}
+          </span>
+        </div>
 
-    </div>
+      </div>
+    </AnimationOnScroll>
   );
 }
 

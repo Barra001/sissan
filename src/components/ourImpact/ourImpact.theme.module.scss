@@ -23,3 +23,51 @@
     }
 
 }
+
+.buttonRow {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+
+.buttonBack,
+.buttonNext {
+    border: 1.5px solid $primary-color;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttonNext {
+    margin-right: 80px;
+}
+
+.enableButton {
+
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+        filter: brightness(1.5);
+    }
+}
+
+.disabledButton {
+    background-color: white;
+    color: $primary-color;
+
+    &:hover {
+        cursor: default;
+    }
+
+}

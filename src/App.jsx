@@ -22,6 +22,7 @@ import OurSolutions from './components/ourSolutions/ourSolutions';
 import OurCountries from './components/ourCountries/ourCountries';
 import Contact from './components/contact/contact';
 import OutImpact from './components/ourImpact/ourImpact';
+import OurClients from './components/ourClients/ourClients';
 
 function App() {
   const aboutUsRef = useRef(null);
@@ -42,11 +43,12 @@ function App() {
         clientsRef={clientsRef}
         contactRef={contactRef}
       />
-      <FrontPage />
+      <FrontPage contactRef={contactRef} />
       <AboutUs mainRef={aboutUsRef} />
       <OurSolutions mainRef={ourSolutionsRef} />
       <OutImpact mainRef={impactRef} />
       <OurCountries mainRef={countriesRef} />
+      <OurClients mainRef={clientsRef} />
       <Contact mainRef={contactRef} />
     </div>
   );

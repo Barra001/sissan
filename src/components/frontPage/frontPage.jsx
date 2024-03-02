@@ -1,10 +1,11 @@
 import React from 'react';
+import { object } from 'prop-types';
 import theme from './frontPage.theme.module.scss';
 import ContactButton from './contactButton/contactButton';
 import video from './video.mp4';
 import Ball from '../ball/ball';
 
-function FrontPage() {
+function FrontPage({ contactRef }) {
   return (
     <>
       <svg width="0" height="0">
@@ -23,11 +24,15 @@ function FrontPage() {
         <h4 className={theme.subTitle}>
           Software de gestión de bancos de sangre y medicina transfusional.
         </h4>
-        <ContactButton>Contacto</ContactButton>
+        <ContactButton goTo={contactRef}>Contacto</ContactButton>
       </section>
     </>
 
   );
 }
+
+FrontPage.propTypes = {
+  contactRef: object.isRequired,
+};
 
 export default FrontPage;
