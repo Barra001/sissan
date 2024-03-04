@@ -73,7 +73,7 @@ function OurSolutions({ mainRef }) {
           title="Agenda"
           text="Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers"
           imageBall={
-            <Ball bottom="65px" left="85px" zindex={0} size={30} color="yellow" />
+            <Ball bottom="45px" left="85px" zindex={0} size={30} color="yellow" />
           }
         />
         <Solution
@@ -83,7 +83,7 @@ function OurSolutions({ mainRef }) {
           subtitle="Sissan PDI"
           text="Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers"
           textBall={
-            <Ball top="-50px" right="50px" zindex={0} size={50} color="violet" />
+            <Ball top="-30px" right="50px" zindex={0} size={50} color="violet" />
           }
           imageBall={
             <Ball bottom="-20px" left="40%" zindex={0} size={30} color="yellow" />

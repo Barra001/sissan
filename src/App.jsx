@@ -31,6 +31,7 @@ function App() {
   const countriesRef = useRef(null);
   const clientsRef = useRef(null);
   const contactRef = useRef(null);
+  const frontPageRef = useRef(null);
 
   return (
     <div>
@@ -42,8 +43,9 @@ function App() {
         countriesRef={countriesRef}
         clientsRef={clientsRef}
         contactRef={contactRef}
+        frontPageRef={frontPageRef}
       />
-      <FrontPage contactRef={contactRef} />
+      <FrontPage contactRef={contactRef} mainRef={frontPageRef} />
       <AboutUs mainRef={aboutUsRef} />
       <OurSolutions mainRef={ourSolutionsRef} />
       <OutImpact mainRef={impactRef} />

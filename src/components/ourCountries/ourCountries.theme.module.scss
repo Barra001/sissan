@@ -6,3 +6,22 @@
     align-items: center;
     justify-content: center;
 }
+
+.country {
+    transition: all 0.3s ease;
+    fill: #EEDEE0;
+
+
+}
+
+.mexico {
+    transform: rotate(45deg) translate(20%, -31%);
+}
+
+.sissanCountries {
+    fill: $primary-color;
+
+    &:hover {
+        fill: #f00;
+    }
+}

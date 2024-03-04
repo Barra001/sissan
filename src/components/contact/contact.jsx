@@ -9,6 +9,8 @@ import SingleContact from './singleContact/singleContact';
 import peruFlag from './assets/flags/PE.svg';
 import paraguayFlag from './assets/flags/PY.svg';
 import uruguayFlag from './assets/flags/UY.svg';
+import argentinaFlag from './assets/flags/AR.svg';
+import boliviaFlag from './assets/flags/BO.svg';
 import linkedin from './assets/icons/linkedin.svg';
 import facebook from './assets/icons/facebook.svg';
 import whatsapp from './assets/icons/whatsapp.svg';
@@ -19,7 +21,7 @@ function Contact({ mainRef }) {
     <>
       <SideMargins>
         <div className={theme.mainContainer} ref={mainRef}>
-          <Ball top="-55px" right="15%" />
+          <Ball top="-75px" right="10%" />
           <SecctionTitle
             subtitle="Información de contacto"
             center
@@ -31,6 +33,10 @@ function Contact({ mainRef }) {
             <SingleContact country="Paraguay" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={paraguayFlag} />
             <SingleContact country="Uruguay" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={uruguayFlag} />
             <SingleContact country="Perú" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={peruFlag} />
+          </div>
+          <div className={theme.responsiveRow}>
+            <SingleContact country="Argentina" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={argentinaFlag} />
+            <SingleContact country="Bolivia" address="2068 Boulevard Henri-Bourassa Est" email="sybexdesigns@gmail.com" phone="+447473997191" flag={boliviaFlag} />
           </div>
           <AnimationOnScroll
             animateIn="animate__slideInUp"

@@ -12,6 +12,7 @@ function NavBar({
   countriesRef,
   clientsRef,
   contactRef,
+  frontPageRef,
 }) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -44,12 +45,15 @@ function NavBar({
         countriesRef={countriesRef}
         clientsRef={clientsRef}
         contactRef={contactRef}
+        frontPageRef={frontPageRef}
       />
       <nav className={theme.navBar} style={{ top: show ? '20px' : '-90px' }}>
         <NavBarButton goTo={aboutUsRef}>Nosotros</NavBarButton>
         <NavBarButton goTo={ourSolutionsRef}>Soluciones</NavBarButton>
         <NavBarButton goTo={impactRef}>Impacto</NavBarButton>
-        <img src={sissanImg} alt="Sissan logo" className={theme.sissanLogo} />
+        <button className={theme.noStyleButton} type="submit" onClick={() => { frontPageRef.current?.scrollIntoView({ behavior: 'smooth' }); }}>
+          <img src={sissanImg} alt="Sissan logo" className={theme.sissanLogo} />
+        </button>
         <div className={theme.spacer} />
         <NavBarButton goTo={countriesRef}>Países</NavBarButton>
         <NavBarButton goTo={clientsRef}>Clientes</NavBarButton>
@@ -68,4 +72,5 @@ NavBar.propTypes = {
   countriesRef: object.isRequired,
   clientsRef: object.isRequired,
   contactRef: object.isRequired,
+  frontPageRef: object.isRequired,
 };

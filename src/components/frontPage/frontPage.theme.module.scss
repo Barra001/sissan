@@ -35,3 +35,14 @@
   margin-bottom: 62px;
   text-align: center;
 }
+
+.blackBackgound {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  border-right: solid 4px black;
+  right: 0;
+  width: 100vw;
+  height: 91.5vh;
+  z-index: -3;
+}

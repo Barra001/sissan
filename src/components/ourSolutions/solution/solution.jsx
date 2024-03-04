@@ -7,7 +7,7 @@ function Solution({
   title, subtitle, text, extendedText, imagePath, inverseAlignment, imageBall, textBall,
 }) {
   const [isOpen, setIsOpened] = useState(false);
-  const isOnTabletOrMobile = window.innerWidth < 1030;
+  const isOnTabletOrMobile = window.innerWidth < 1160;
   const invertAlignment = !isOnTabletOrMobile && inverseAlignment;
   const textContainer = (
     <div style={{

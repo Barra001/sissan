@@ -15,6 +15,18 @@ import seventhClient from './clients/7.png';
 import Ball from '../ball/ball';
 
 function MySlider() {
+  const isOnMobile = window.innerWidth < 770;
+  const isOnTablet = window.innerWidth < 1160;
+
+  function handleResize() {
+    if (isOnMobile) {
+      return 1;
+    }
+    if (isOnTablet) {
+      return 2;
+    }
+    return 3;
+  }
   return (
     <div className={theme.carrouselContainer}>
       <Ball top="-35px" right="30%" size={100} />
@@ -22,13 +34,15 @@ function MySlider() {
         naturalSlideWidth={500}
         naturalSlideHeight={250}
         totalSlides={7}
-        visibleSlides={3}
+        visibleSlides={handleResize()}
         infinite
         isPlaying
         disableAnimation={false}
         playDirection="forward"
         interval={1700}
         dragEnabled={false}
+        disableKeyboard
+        touchEnabled={false}
       >
         <Slider className={theme.handCursor}>
           <Slide index={0}>

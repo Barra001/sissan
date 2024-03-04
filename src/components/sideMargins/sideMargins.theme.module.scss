@@ -17,14 +17,4 @@
     background-color: $secondary-background-color;
     border-top: 1.5px solid #E7DAED;
     border-bottom: 1.5px solid #E7DAED;
-    padding: 50px 80px;
-
-
-    @include respond-to("tablet") {
-        padding: 50px 60px;
-    }
-
-    @include respond-to("mobile") {
-        padding: 50px 40px;
-    }
 }

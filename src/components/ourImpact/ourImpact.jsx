@@ -13,6 +13,7 @@ function OurImpact({ mainRef }) {
           <SecctionTitle
             subtitle="Impacto"
             center
+            marginBottom="0"
           >
             Nuestro
           </SecctionTitle>
