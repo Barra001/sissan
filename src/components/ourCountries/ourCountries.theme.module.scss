@@ -1,27 +1,37 @@
 @import "../../styles/styleguide.scss";
+@import "../../styles/breakpoints.scss";
 
 .mainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-height: 78vh;
+    flex: 1;
+    position: relative;
+}
+
+.centerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .country {
     transition: all 0.3s ease;
     fill: #EEDEE0;
-
-
+    position: relative;
+    overflow: visible;
 }
 
 .mexico {
-    transform: rotate(45deg) translate(20%, -31%);
+    transform: rotate(45deg) translate(18%, -41%);
 }
 
 .sissanCountries {
     fill: $primary-color;
 
     &:hover {
-        fill: #f00;
+        fill: $secondary-color;
     }
 }
