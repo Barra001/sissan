@@ -22,6 +22,7 @@
     fill: #EEDEE0;
     position: relative;
     overflow: visible;
+    pointer-events: none;
 }
 
 .mexico {
@@ -30,8 +31,11 @@
 
 .sissanCountries {
     fill: $primary-color;
+    transition: all 0.5s ease;
+}
 
+.countryText {
     &:hover {
-        fill: $secondary-color;
+        cursor: pointer;
     }
 }

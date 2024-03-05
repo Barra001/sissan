@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   ComposableMap, Geographies, Geography, Marker,
@@ -7,14 +7,38 @@ import theme from './ourCountries.theme.module.scss';
 import SideMargins from '../sideMargins/sideMargins';
 import Ball from '../ball/ball';
 import SecctionTitle from '../secctionTitle/secctionTitle';
-import { peruSvg } from './data/arrowsSvgs';
 import { southAmericaCountries, sissanCountries } from './data/countries';
 
 function OurCountries({ mainRef }) {
   const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
+  useEffect(
+    () => {
+      setTimeout(() => {
+        Object.keys(sissanCountries).forEach((element) => {
+          const country = document.getElementById(`${sissanCountries[element].name}Country`);
+          const text = document.getElementById(`${sissanCountries[element].name}TextSVG`);
+          function addStyles() {
+            country.style.fill = '#F76680';
+            country.style.transform = 'scale(1.01)';
+          }
+
+          function removeStyles() {
+            country.style.fill = '#8E0917';
+            country.style.transform = '';
+          }
+          if (text) {
+            text.addEventListener('mouseover', addStyles);
+            text.addEventListener('mouseout', removeStyles);
+          }
+        });
+      }, 1000);
+    },
+    [],
+  );
+
   return (
-    <SideMargins secondaryBackground>
+    <SideMargins secondaryBackground onlyVerticalMargin>
       <Ball top="-70px" left="100px" relative />
       <SecctionTitle
         subtitle="Paises"
@@ -39,24 +63,29 @@ function OurCountries({ mainRef }) {
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      className={`${theme.country} 
+                      id={`${geo.properties.name}Country`}
+                      className={`${theme.country}
                       ${geo.properties.name === 'Mexico' ? theme.mexico : ''} 
-                      ${sissanCountries.includes(geo.properties.name) ? theme.sissanCountries : ''}`}
+                      ${sissanCountries.map((e) => e.name).includes(geo.properties.name) ? theme.sissanCountries : ''}`}
                     />
                   );
                 }
                 return null;
               })}
             </Geographies>
+            {sissanCountries.map((e) => (
+              <Marker coordinates={e.arrowCoordinates} key={`${e.name}CountryArrowRender`}>
+                { e.svgArrow }
 
-            <Marker coordinates={[-98.1193, -2.4897]}>
-              {peruSvg}
+              </Marker>
+            ))}
+            {sissanCountries.map((e) => (
+              <Marker coordinates={e.textCoordinates} key={`${e.name}CountryTextRender`}>
+                { e.svgText }
 
-              <text>
-                Hola
-              </text>
+              </Marker>
+            ))}
 
-            </Marker>
           </ComposableMap>
         </div>
       </div>
