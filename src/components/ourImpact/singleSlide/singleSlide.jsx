@@ -1,66 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react';
+/* eslint-disable eqeqeq */
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useSpring, animated } from 'react-spring';
 import theme from './singleSlide.theme.module.scss';
 
-function formatBigNumber(number) {
+/* function formatBigNumber(number) {
   return new Intl.NumberFormat('es-AR').format(number);
-}
+} */
 function SingleSlide({
   finalNumber, title, body, active,
 }) {
-  const [number, setNumber] = useState(finalNumber / 2);
-  const maxInterval = 200;
-  const ref = useRef(null);
-  const [observerSet, setObserverSet] = useState(false);
-  let interId;
-  let observer;
+  const mainRef = useRef(null);
+  const number = useSpring({
+    from: { number: 0 },
+    to: { number: finalNumber },
+    config: { mass: 1, tension: 20, friction: 10 },
+    delay: 250,
+  });
 
-  const increment = () => {
-    if (number < finalNumber) {
-      setNumber(number + 10);
-    } else {
-      clearInterval(interId);
-    }
-  };
+  useEffect(() => {
+    number.number.pause();
 
-  useEffect(
-    () => {
-      if (!observerSet) {
-        observer = new IntersectionObserver(
-          (entries) => {
-            if (entries.includes((entry) => entry.isIntersecting)) {
-              const actualInterval = maxInterval * (number / finalNumber) ** (finalNumber * 0.03);
-              interId = setInterval(increment, actualInterval);
-            }
-          },
-          {
-            root: null, // relative to the viewport
-            rootMargin: '0px',
-            threshold: 0.1, // Trigger when 10% of the element is visible
-          },
-        );
-
-        if (ref.current) {
-          observer.observe(ref.current); // Step 3: Observe the element
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && number.number.isPaused) {
+          number.number.resume();
         }
-        setObserverSet(true);
-      } else {
-        const actualInterval = maxInterval * (number / finalNumber) ** (finalNumber * 0.03);
-        interId = setInterval(increment, actualInterval);
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      };
-    },
-    [number],
-  );
+      });
+    });
+    observer.observe(mainRef.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <div className={`${theme.mainContainer} ${active ? theme.active : ''}`} id={`SingleSlide-${title}`}>
-      <span className={theme.linearGradientText}>{formatBigNumber(number)}</span>
+    <div className={`${theme.mainContainer} ${active ? theme.active : ''}`} id={`SingleSlide-${title}`} ref={mainRef}>
+      <animated.div className={theme.linearGradientText}>
+        {number.number.to((n) => n.toFixed(0))}
+      </animated.div>
       <span className={theme.subtitle}>{title}</span>
       <p className={theme.body}>{body}</p>
     </div>

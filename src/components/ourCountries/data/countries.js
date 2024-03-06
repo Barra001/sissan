@@ -24,10 +24,10 @@ export const southAmericaCountries = [
 
 export const sissanCountries = [
   {
-    name: 'Uruguay', svgText: uruguayTextSvg, svgArrow: uruguayArrowSvg, arrowCoordinates: [-56, -22], textCoordinates: [-38, -23],
+    name: 'Uruguay', svgText: uruguayTextSvg, svgArrow: uruguayArrowSvg, arrowCoordinates: [-56, -23], textCoordinates: [-42, -25],
   },
   {
-    name: 'Paraguay', svgText: paraguayTextSvg, svgArrow: paraguayArrowSvg, arrowCoordinates: [-58, -10], textCoordinates: [-29, -12],
+    name: 'Paraguay', svgText: paraguayTextSvg, svgArrow: paraguayArrowSvg, arrowCoordinates: [-60, -8], textCoordinates: [-38, -13],
   },
   {
     name: 'Peru', svgText: peruTextSvg, svgArrow: peruArrowSvg, arrowCoordinates: [-98, -2], textCoordinates: [-116, 0],

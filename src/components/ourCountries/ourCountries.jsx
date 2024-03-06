@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import PropTypes from 'prop-types';
 import {
   ComposableMap, Geographies, Geography, Marker,
@@ -46,49 +47,55 @@ function OurCountries({ mainRef }) {
       >
         Nuestros
       </SecctionTitle>
-      <div className={theme.centerRow}>
-        <div className={theme.mainContainer} ref={mainRef}>
-          <ComposableMap
-            projection="geoMercator"
-            projectionConfig={{
-              rotate: [58, 25, 0],
-              center: [-12, 16],
-              scale: 350,
-            }}
-          >
-            <Geographies geography={geoUrl}>
-              {({ geographies }) => geographies.map((geo) => {
-                if (southAmericaCountries.includes(geo.properties.name)) {
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      id={`${geo.properties.name}Country`}
-                      className={`${theme.country}
+      <AnimationOnScroll
+        animateIn="animate__fadeIn"
+        duration={1}
+      >
+        <div className={theme.centerRow}>
+          <div className={theme.mainContainer} ref={mainRef}>
+            <ComposableMap
+              projection="geoMercator"
+              projectionConfig={{
+                rotate: [58, 25, 0],
+                center: [-12, 16],
+                scale: 350,
+              }}
+            >
+
+              <Geographies geography={geoUrl}>
+                {({ geographies }) => geographies.map((geo) => {
+                  if (southAmericaCountries.includes(geo.properties.name)) {
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        id={`${geo.properties.name}Country`}
+                        className={`${theme.country}
                       ${geo.properties.name === 'Mexico' ? theme.mexico : ''} 
                       ${sissanCountries.map((e) => e.name).includes(geo.properties.name) ? theme.sissanCountries : ''}`}
-                    />
-                  );
-                }
-                return null;
-              })}
-            </Geographies>
-            {sissanCountries.map((e) => (
-              <Marker coordinates={e.arrowCoordinates} key={`${e.name}CountryArrowRender`}>
-                { e.svgArrow }
+                      />
+                    );
+                  }
+                  return null;
+                })}
+              </Geographies>
 
-              </Marker>
-            ))}
-            {sissanCountries.map((e) => (
-              <Marker coordinates={e.textCoordinates} key={`${e.name}CountryTextRender`}>
-                { e.svgText }
+              {sissanCountries.map((e) => (
+                <Marker coordinates={e.arrowCoordinates} key={`${e.name}CountryArrowRender`}>
+                  { e.svgArrow }
+                </Marker>
+              ))}
+              {sissanCountries.map((e) => (
+                <Marker coordinates={e.textCoordinates} key={`${e.name}CountryTextRender`}>
+                  { e.svgText }
 
-              </Marker>
-            ))}
+                </Marker>
+              ))}
 
-          </ComposableMap>
+            </ComposableMap>
+          </div>
         </div>
-      </div>
+      </AnimationOnScroll>
 
     </SideMargins>
   );
