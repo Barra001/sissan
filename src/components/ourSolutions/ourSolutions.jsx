@@ -1,18 +1,18 @@
 import React from 'react';
 import { object } from 'prop-types';
-import bancoDeSangreImage from './images/banco_de_sangre.png';
-import medicinaTransfuncionalImage from './images/transfuncional.png';
+import bancoDeSangreImage from './images/banco_de_sangre.jpg';
+import medicinaTransfuncionalImage from './images/transfuncional.jpg';
 import SideMargins from '../sideMargins/sideMargins';
 import SecctionTitle from '../secctionTitle/secctionTitle';
 import theme from './ourSolutions.theme.module.scss';
 import Solution from './solution/solution';
-import turnos from './images/turnos.png';
-import insumos from './images/insumos.png';
-import interoperabilidad from './images/interoperabilidad.png';
-import agenda from './images/agenda.png';
-import plasma from './images/plasma.png';
-import historial from './images/historial.png';
-import donantes from './images/donantes.png';
+import turnos from './images/turnos.jpg';
+import insumos from './images/insumos.jpg';
+import interoperabilidad from './images/interoperabilidad.jpg';
+import agenda from './images/agenda.jpg';
+import plasma from './images/plasma.jpg';
+import historial from './images/historial.jpg';
+import donantes from './images/donantes.jpg';
 
 function OurSolutions({ mainRef }) {
   return (
