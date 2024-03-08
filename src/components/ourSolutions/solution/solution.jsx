@@ -63,7 +63,7 @@ function Solution({
         duration={1}
       >
         <div className={theme.imageContainer}>
-          <img src={imagePath} alt={title} className={theme.image} />
+          <img src={imagePath} alt={title} className={`${theme.image} ${inverseAlignment ? theme.imageLeft : theme.imageRight}`} />
         </div>
       </AnimationOnScroll>
     </div>

@@ -43,8 +43,27 @@
     border-radius: 50px;
     aspect-ratio: 16/11;
     max-width: 80%;
+    transition: 0.8s all ease-in-out;
 
 
+}
+
+.imageRight {
+    &:hover {
+        transform: rotateY(12deg) rotateX(-12deg);
+        box-shadow: 35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+        -webkit-box-shadow: 35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+        -moz-box-shadow: 35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+    }
+}
+
+.imageLeft {
+    &:hover {
+        transform: rotateY(-12deg) rotateX(-12deg);
+        box-shadow: -35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+        -webkit-box-shadow: -35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+        -moz-box-shadow: -35px 35px 25px -20px rgba(0, 0, 0, 0.51);
+    }
 }
 
 .textContainer {
