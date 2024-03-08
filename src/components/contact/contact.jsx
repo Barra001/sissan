@@ -14,14 +14,12 @@ import boliviaFlag from './assets/flags/BO.svg';
 import linkedin from './assets/icons/linkedin.svg';
 import facebook from './assets/icons/facebook.svg';
 import whatsapp from './assets/icons/whatsapp.svg';
-import Ball from '../ball/ball';
 
 function Contact({ mainRef }) {
   return (
     <>
       <SideMargins>
         <div className={theme.mainContainer} ref={mainRef}>
-          <Ball top="-75px" right="10%" />
           <SecctionTitle
             subtitle="Información de contacto"
             center

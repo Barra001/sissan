@@ -12,7 +12,6 @@ import fourthClient from './clients/4.png';
 import fifthClient from './clients/5.png';
 import sixthClient from './clients/6.png';
 import seventhClient from './clients/7.png';
-import Ball from '../ball/ball';
 
 function MySlider() {
   const isOnMobile = window.innerWidth < 770;
@@ -29,7 +28,6 @@ function MySlider() {
   }
   return (
     <div className={theme.carrouselContainer}>
-      <Ball top="-35px" right="30%" size={100} />
       <CarouselProvider
         naturalSlideWidth={500}
         naturalSlideHeight={250}

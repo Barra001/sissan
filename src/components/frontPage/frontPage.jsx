@@ -3,7 +3,6 @@ import { object } from 'prop-types';
 import theme from './frontPage.theme.module.scss';
 import ContactButton from './contactButton/contactButton';
 import video from './video.mp4';
-import Ball from '../ball/ball';
 import safariImage from './safariFrontImage.webp';
 
 function FrontPage({ contactRef, mainRef }) {
@@ -26,7 +25,6 @@ function FrontPage({ contactRef, mainRef }) {
           </video>
         )}
 
-      <Ball right="80px" bottom="-10px" />
       <section className={theme.column} ref={mainRef}>
         <h1 className={theme.title}>Soluciones en gestión de sangre</h1>
         <h4 className={theme.subTitle}>

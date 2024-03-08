@@ -6,7 +6,6 @@ import {
 } from 'react-simple-maps';
 import theme from './ourCountries.theme.module.scss';
 import SideMargins from '../sideMargins/sideMargins';
-import Ball from '../ball/ball';
 import SecctionTitle from '../secctionTitle/secctionTitle';
 import { southAmericaCountries, sissanCountries } from './data/countries';
 
@@ -40,7 +39,6 @@ function OurCountries({ mainRef }) {
 
   return (
     <SideMargins secondaryBackground onlyVerticalMargin>
-      <Ball top="-70px" left="100px" relative />
       <SecctionTitle
         subtitle="Paises"
         center
